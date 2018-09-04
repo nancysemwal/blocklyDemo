@@ -6,12 +6,16 @@
     <title>Welcome to Blockly Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+
     <!-- script src="main.js"></script -->
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Nancy</a>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Nancy</a>
+            </div>
             <div id="navbar" class = "collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
@@ -21,5 +25,45 @@
             </div>
         </div>
     </nav>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Description</h2>
+                    <p>Enhance your language skills. Stages can be skipped. Blockly rules the world. There is no God.</p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Blockly</h2>
+                    <div id="blocklyDiv"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class = "row">
+            <div class="col-md-12">
+                <h2>Remarks</h2>
+            </div>
+        </div>
+    </div>
+    <script src="../google-blockly-ca17e40/blockly_compressed.js"></script>
+    <script src="../google-blockly-ca17e40/blocks_compressed.js"></script>
+    <script src="../google-blockly-ca17e40/msg/js/en.js"></script>
+
+    <xml id="toolbox" style="display: none">
+        <block type="controls_if"></block>
+        <block type="controls_repeat_ext"></block>
+        <block type="logic_compare"></block>
+        <block type="math_number"></block>
+        <block type="math_arithmetic"></block>
+        <block type="text"></block>
+        <block type="text_print"></block>
+    </xml>
+
+    <script>
+        var workspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+    </script>
 </body>
 </html>
